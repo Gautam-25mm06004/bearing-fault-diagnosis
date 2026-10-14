@@ -1,0 +1,97 @@
+{
+  "n_windows": 5886,
+  "n_features": 38,
+  "window": 2048,
+  "step": 1024,
+  "classes": [
+    "Normal",
+    "B007",
+    "B014",
+    "B021",
+    "IR007",
+    "IR014",
+    "IR021",
+    "OR007@6",
+    "OR014@6",
+    "OR021@6"
+  ],
+  "loads_hp": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "protocols": {
+    "RandomForest": {
+      "random_window_split": {
+        "accuracy": 0.9994337485843715,
+        "macro_f1": 0.9992907712234196
+      },
+      "leave_one_load_out": {
+        "accuracy_mean": 0.9996138996138997,
+        "accuracy_min": 0.9984555984555985,
+        "macro_f1_mean": 0.9995744603795451
+      },
+      "leave_one_fault_size_out_4class": {
+        "accuracy_mean": 0.666844348074867,
+        "accuracy_min": 0.4994692144373673,
+        "macro_f1_mean": 0.5886334360450064
+      }
+    },
+    "HistGradientBoosting": {
+      "random_window_split": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "leave_one_load_out": {
+        "accuracy_mean": 0.9848373583387782,
+        "accuracy_min": 0.9491525423728814,
+        "macro_f1_mean": 0.9821572403220924
+      },
+      "leave_one_fault_size_out_4class": {
+        "accuracy_mean": 0.7226818825331592,
+        "accuracy_min": 0.5063829787234042,
+        "macro_f1_mean": 0.6894949312154827
+      }
+    },
+    "SVM-RBF": {
+      "random_window_split": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "leave_one_load_out": {
+        "accuracy_mean": 0.9992578768002497,
+        "accuracy_min": 0.9976833976833976,
+        "macro_f1_mean": 0.9991498185049089
+      },
+      "leave_one_fault_size_out_4class": {
+        "accuracy_mean": 0.5094493116395494,
+        "accuracy_min": 0.498936170212766,
+        "macro_f1_mean": 0.43491998126745307
+      }
+    }
+  },
+  "ablation_leave_one_fault_size_out": {
+    "model": "HistGradientBoosting",
+    "time": {
+      "n_features": 10,
+      "accuracy_mean": 0.46511839589178655,
+      "accuracy_min": 0.4208611279563372,
+      "macro_f1_mean": 0.4110247032754204
+    },
+    "spectral": {
+      "n_features": 16,
+      "accuracy_mean": 0.8311985363961757,
+      "accuracy_min": 0.6900212314225053,
+      "macro_f1_mean": 0.8163245003772045
+    },
+    "envelope": {
+      "n_features": 12,
+      "accuracy_mean": 0.4294530404178862,
+      "accuracy_min": 0.2656155245603396,
+      "macro_f1_mean": 0.38949442788137695
+    }
+  },
+  "best_model": "HistGradientBoosting",
+  "runtime_s": 65.3
+}
